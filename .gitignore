@@ -1,0 +1,45 @@
+# Rider project files
+.idea/
+*.sln.iml
+*.iml
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+
+# Rider caches
+.idea/.idea.*
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/.name
+
+# Rider local history
+.idea/.idea.LocalHistory
+
+# Rider temporary files
+.idea/.idea_modules
+.idea/.idea_modules.xml
+
+# DotNet build
+*.dll
+*.exe
+*.pdb
+*.log
+
+# VS Code settings (if applicable)
+.vscode/
+
+# Resharper
+_ReSharper*/
+
+# OS generated files
+.DS_Store
+Thumbs.db
