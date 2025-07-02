@@ -7,14 +7,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+if (Environment.GetEnvironmentVariable("DISABLE_HTTPS_REDIRECT") != "true")
+{
+    app.UseHttpsRedirection();
+}
 
 var summaries = new[]
 {

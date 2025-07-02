@@ -11,6 +11,12 @@ RUN dotnet publish DummyProject.csproj -c Release --no-restore -o out -a $TARGET
 # Runtime stage
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:8.0-bookworm-slim
 WORKDIR /app
+
+ENV DISABLE_HTTPS_REDIRECT=true
+
+ENV HTTP_PORTS=8080
+ENV ASPNETCORE_URLS="http://*:${HTTP_PORTS}"
+
 COPY --from=build /app/out .
 
 ENTRYPOINT ["./DummyProject"]
